@@ -2,11 +2,12 @@
 //
 // WARNING: Code you write here will be lost the next time you deploy the project.
 
-package myfirstmodule.proxies;
+package testing.proxies;
 
 public enum Actions
 {
-	GetCookie(new java.lang.String[][] { new java.lang.String[] { "en_US", "GetCookie" } });
+	GetCookie(new java.lang.String[][] { new java.lang.String[] { "en_US", "GetCookie" } }),
+	GetHeader(new java.lang.String[][] { new java.lang.String[] { "en_US", "GetHeader" } });
 
 	private java.util.Map<java.lang.String, java.lang.String> captions;
 

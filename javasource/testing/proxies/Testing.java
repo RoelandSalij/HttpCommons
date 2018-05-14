@@ -2,7 +2,7 @@
 //
 // WARNING: Code you write here will be lost the next time you deploy the project.
 
-package myfirstmodule.proxies;
+package testing.proxies;
 
 public class Testing
 {
@@ -13,7 +13,7 @@ public class Testing
 	/**
 	 * Internal name of this entity
 	 */
-	public static final java.lang.String entityName = "MyFirstModule.Testing";
+	public static final java.lang.String entityName = "Testing.Testing";
 
 	/**
 	 * Enum describing members of this entity
@@ -21,7 +21,8 @@ public class Testing
 	public enum MemberNames
 	{
 		Input("Input"),
-		Action("Action");
+		Action("Action"),
+		ReturnValue("ReturnValue");
 
 		private java.lang.String metaName;
 
@@ -39,15 +40,15 @@ public class Testing
 
 	public Testing(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.Testing"));
+		this(context, com.mendix.core.Core.instantiate(context, "Testing.Testing"));
 	}
 
 	protected Testing(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject testingMendixObject)
 	{
 		if (testingMendixObject == null)
 			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
-		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.Testing", testingMendixObject.getType()))
-			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.Testing");
+		if (!com.mendix.core.Core.isSubClassOf("Testing.Testing", testingMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a Testing.Testing");
 
 		this.testingMendixObject = testingMendixObject;
 		this.context = context;
@@ -57,24 +58,24 @@ public class Testing
 	 * @deprecated Use 'Testing.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.Testing initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static testing.proxies.Testing initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		return myfirstmodule.proxies.Testing.load(context, mendixIdentifier);
+		return testing.proxies.Testing.load(context, mendixIdentifier);
 	}
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.Testing initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
+	public static testing.proxies.Testing initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		return new myfirstmodule.proxies.Testing(context, mendixObject);
+		return new testing.proxies.Testing(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.Testing load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
+	public static testing.proxies.Testing load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
-		return myfirstmodule.proxies.Testing.initialize(context, mendixObject);
+		return testing.proxies.Testing.initialize(context, mendixObject);
 	}
 
 	/**
@@ -148,7 +149,7 @@ public class Testing
 	 * Set value of Action
 	 * @param action
 	 */
-	public final myfirstmodule.proxies.Actions getAction()
+	public final testing.proxies.Actions getAction()
 	{
 		return getAction(getContext());
 	}
@@ -157,20 +158,20 @@ public class Testing
 	 * @param context
 	 * @return value of Action
 	 */
-	public final myfirstmodule.proxies.Actions getAction(com.mendix.systemwideinterfaces.core.IContext context)
+	public final testing.proxies.Actions getAction(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.Action.toString());
 		if (obj == null)
 			return null;
 
-		return myfirstmodule.proxies.Actions.valueOf((java.lang.String) obj);
+		return testing.proxies.Actions.valueOf((java.lang.String) obj);
 	}
 
 	/**
 	 * Set value of Action
 	 * @param action
 	 */
-	public final void setAction(myfirstmodule.proxies.Actions action)
+	public final void setAction(testing.proxies.Actions action)
 	{
 		setAction(getContext(), action);
 	}
@@ -180,12 +181,48 @@ public class Testing
 	 * @param context
 	 * @param action
 	 */
-	public final void setAction(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.Actions action)
+	public final void setAction(com.mendix.systemwideinterfaces.core.IContext context, testing.proxies.Actions action)
 	{
 		if (action != null)
 			getMendixObject().setValue(context, MemberNames.Action.toString(), action.toString());
 		else
 			getMendixObject().setValue(context, MemberNames.Action.toString(), null);
+	}
+
+	/**
+	 * @return value of ReturnValue
+	 */
+	public final java.lang.String getReturnValue()
+	{
+		return getReturnValue(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of ReturnValue
+	 */
+	public final java.lang.String getReturnValue(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.ReturnValue.toString());
+	}
+
+	/**
+	 * Set value of ReturnValue
+	 * @param returnvalue
+	 */
+	public final void setReturnValue(java.lang.String returnvalue)
+	{
+		setReturnValue(getContext(), returnvalue);
+	}
+
+	/**
+	 * Set value of ReturnValue
+	 * @param context
+	 * @param returnvalue
+	 */
+	public final void setReturnValue(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String returnvalue)
+	{
+		getMendixObject().setValue(context, MemberNames.ReturnValue.toString(), returnvalue);
 	}
 
 	/**
@@ -212,7 +249,7 @@ public class Testing
 
 		if (obj != null && getClass().equals(obj.getClass()))
 		{
-			final myfirstmodule.proxies.Testing that = (myfirstmodule.proxies.Testing) obj;
+			final testing.proxies.Testing that = (testing.proxies.Testing) obj;
 			return getMendixObject().equals(that.getMendixObject());
 		}
 		return false;
@@ -229,7 +266,7 @@ public class Testing
 	 */
 	public static java.lang.String getType()
 	{
-		return "MyFirstModule.Testing";
+		return "Testing.Testing";
 	}
 
 	/**

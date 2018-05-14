@@ -2,7 +2,7 @@
 //
 // WARNING: Code you write here will be lost the next time you deploy the project.
 
-package myfirstmodule.proxies.microflows;
+package testing.proxies.microflows;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,41 +13,54 @@ import com.mendix.systemwideinterfaces.core.IContext;
 
 public class Microflows
 {
-	// These are the microflows for the MyFirstModule module
-	public static void createTestObject(IContext context, myfirstmodule.proxies.Actions _actions, java.lang.String _input)
+	// These are the microflows for the Testing module
+	public static void createTestObject(IContext context, testing.proxies.Actions _actions, java.lang.String _input)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
 			params.put("Actions", _actions == null ? null : _actions.name());
 			params.put("Input", _input);
-			Core.execute(context, "MyFirstModule.CreateTestObject", params);
+			Core.execute(context, "Testing.CreateTestObject", params);
 		}
 		catch (CoreException e)
 		{
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static void executeAction(IContext context, myfirstmodule.proxies.Testing _testing)
+	public static void executeAction(IContext context, testing.proxies.Testing _testing)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
 			params.put("Testing", _testing == null ? null : _testing.getMendixObject());
-			Core.execute(context, "MyFirstModule.ExecuteAction", params);
+			Core.execute(context, "Testing.ExecuteAction", params);
 		}
 		catch (CoreException e)
 		{
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static void getCookie(IContext context, myfirstmodule.proxies.Testing _testing)
+	public static void getCookie(IContext context, testing.proxies.Testing _testing)
 	{
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
 			params.put("Testing", _testing == null ? null : _testing.getMendixObject());
-			Core.execute(context, "MyFirstModule.GetCookie", params);
+			Core.execute(context, "Testing.GetCookie", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void getHeader(IContext context, testing.proxies.Testing _testing)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("Testing", _testing == null ? null : _testing.getMendixObject());
+			Core.execute(context, "Testing.GetHeader", params);
 		}
 		catch (CoreException e)
 		{
@@ -59,7 +72,19 @@ public class Microflows
 		try
 		{
 			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
-			Core.execute(context, "MyFirstModule.RunGetCookie", params);
+			Core.execute(context, "Testing.RunGetCookie", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void runGetHeader(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "Testing.RunGetHeader", params);
 		}
 		catch (CoreException e)
 		{
